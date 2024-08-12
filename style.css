@@ -1,0 +1,122 @@
+h1 {
+    display: block;
+    text-align: center;
+}
+
+#calculadora {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 300px;
+    margin: 5% auto;
+    text-align: center;
+    border: solid 1px;
+    padding: 1%;
+    background-color: gray;
+    display: grid;
+    grid-template-columns: repeat(4 25%);
+    grid-template-rows: repeat(6 1fr);
+    
+    grid-template-areas: 
+    'display display display display'
+    'division multiplicacion resta suma'
+    'siete ocho nueve suma'
+    'cuatro cinco seis suma'
+    'uno dos tres suma'
+    'punto cero borrar igual';
+}
+
+#display {
+    grid-area: display;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    /* margin-right: 2%; */
+    width: 95%;
+    height: 2rem;
+    padding: 1%;
+    text-align: right;
+    font-size:x-large;
+    background-color: yellowgreen;
+
+}
+
+.boton {
+    margin-top: 4%;
+    width: 70px;
+    height: 40px;
+    background-color:wheat;
+    font-weight: bold;
+
+}
+
+.boton:hover {
+    background-color: lightsalmon;
+}
+#uno {
+    grid-area: uno;
+}
+
+#dos {
+    grid-area: dos;
+}
+
+#tres {
+    grid-area: tres;
+}
+
+#cuatro {
+    grid-area: cuatro;
+}
+
+#cinco {
+    grid-area: cinco;
+}
+
+#seis {
+    grid-area: seis;
+}
+
+#siete {
+    grid-area: siete;
+}
+
+#ocho {
+    grid-area: ocho;
+}
+
+#nueve {
+    grid-area: nueve;
+}
+
+#cero {
+    grid-area: cero;
+}
+
+#suma {
+    grid-area: suma;
+    height: 98%;
+}
+
+#resta {
+    grid-area: resta;
+}
+
+#multiplicacion {
+    grid-area: multiplicacion;
+}
+
+#division {
+    grid-area: division;
+}
+
+#punto {
+    grid-area: punto;
+}
+
+#igual {
+    grid-area: igual;
+}
+
+#borrar {
+    grid-area: borrar;
+    background-color: rgb(255, 34, 0);
+    color: white;
+}

@@ -6,28 +6,29 @@
     <link rel="stylesheet" href="./style.css">
     <title>Calculadora JS</title>
 </head>
-<body>
-    <h1>Calculadora con JavaScript</h1>
+<body  onload="encenderApagar()">
+    <h1 id="titulo">Calculadora con JavaScript</h1>
 
     <div id="calculadora">
-        <input class="boton" type="text" id="display" disabled>
-        <input class="boton" type="button" id="uno" value="1" onclick="ingresarDato('1')"></input>
-        <input class="boton" type="button" id="dos" value="2" onclick="ingresarDato('2')"></input>
-        <input class="boton" type="button" id="tres" value="3" onclick="ingresarDato('3')"></input>
-        <input class="boton" type="button" id="cuatro" value="4" onclick="ingresarDato('4')"></input>
-        <input class="boton" type="button" id="cinco" value="5" onclick="ingresarDato('5')"></input>
-        <input class="boton" type="button" id="seis" value="6" onclick="ingresarDato('6')"></input>
-        <input class="boton" type="button" id="siete" value="7" onclick="ingresarDato('7')"></input>
-        <input class="boton" type="button" id="ocho" value="8" onclick="ingresarDato('8')"></input>
-        <input class="boton" type="button" id="nueve" value="9" onclick="ingresarDato('9')"></input>
-        <input class="boton" type="button" id="cero" value="0" onclick="ingresarDato('0')"></input>
-        <input class="boton" type="button" id="suma" value="+" onclick="ingresarDato('+')"></input>
-        <input class="boton" type="button" id="resta" value="-" onclick="ingresarDato('-')"></input>
-        <input class="boton" type="button" id="multiplicacion" value="*" onclick="ingresarDato('*')"></input>
-        <input class="boton" type="button" id="division" value="/" onclick="ingresarDato('/')"></input>
-        <input class="boton" type="button" id="igual" value="=" onclick="calcular()"></input>
-        <input class="boton" type="button" id="punto" value="." onclick="ingresarDato('.')"></input>
-        <input class="boton" type="button" id="borrar" value="C" onclick="borrar()"></input>
+        <input type="button" id="onOff" value="On" onclick="encenderApagar()"></input>
+        <input class="btn" type="text" id="display" disabled>
+        <input class="btn" type="button" id="uno" value="1" onclick="ingresarDato('1')"></input>
+        <input class="btn" type="button" id="dos" value="2" onclick="ingresarDato('2')"></input>
+        <input class="btn" type="button" id="tres" value="3" onclick="ingresarDato('3')"></input>
+        <input class="btn" type="button" id="cuatro" value="4" onclick="ingresarDato('4')"></input>
+        <input class="btn" type="button" id="cinco" value="5" onclick="ingresarDato('5')"></input>
+        <input class="btn" type="button" id="seis" value="6" onclick="ingresarDato('6')"></input>
+        <input class="btn" type="button" id="siete" value="7" onclick="ingresarDato('7')"></input>
+        <input class="btn" type="button" id="ocho" value="8" onclick="ingresarDato('8')"></input>
+        <input class="btn" type="button" id="nueve" value="9" onclick="ingresarDato('9')"></input>
+        <input class="btn" type="button" id="cero" value="0" onclick="ingresarDato('0')"></input>
+        <input class="btn" type="button" id="suma" value="+" onclick="ingresarDato('+')"></input>
+        <input class="btn" type="button" id="resta" value="-" onclick="ingresarDato('-')"></input>
+        <input class="btn" type="button" id="multiplicacion" value="*" onclick="ingresarDato('*')"></input>
+        <input class="btn" type="button" id="division" value="/" onclick="ingresarDato('/')"></input>
+        <input class="btn" type="button" id="igual" value="=" onclick="calcular()"></input>
+        <input class="btn" type="button" id="punto" value="." onclick="ingresarDato('.')"></input>
+        <input class="btn" type="button" id="borrar" value="C" onclick="borrar()"></input>
 
     </div>
     <script src="./script.js"></script>

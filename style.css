@@ -9,36 +9,37 @@ h1 {
     margin: 5% auto;
     text-align: center;
     border: solid 1px;
+    border-radius: 2%;
     padding: 1%;
-    background-color: gray;
+    background-color: rgb(37, 47, 47);
     display: grid;
     grid-template-columns: repeat(4 25%);
-    grid-template-rows: repeat(6 1fr);
-    
+    grid-template-rows: repeat(7 1fr);
     grid-template-areas: 
+    '0 0 0 onOff'
     'display display display display'
-    'division multiplicacion resta suma'
+    'division multiplicacion resta borrar'
     'siete ocho nueve suma'
     'cuatro cinco seis suma'
     'uno dos tres suma'
-    'punto cero borrar igual';
+    'punto cero igual suma';
 }
 
 #display {
     grid-area: display;
     margin-top: 2%;
     margin-bottom: 2%;
-    /* margin-right: 2%; */
     width: 95%;
     height: 2rem;
     padding: 1%;
     text-align: right;
     font-size:x-large;
-    background-color: yellowgreen;
+    background-color: gray;
+    color: darkslategray
 
 }
 
-.boton {
+.btn, #onOff {
     margin-top: 4%;
     width: 70px;
     height: 40px;
@@ -47,9 +48,19 @@ h1 {
 
 }
 
-.boton:hover {
+.btn:hover {
     background-color: lightsalmon;
 }
+
+#onOff{
+    grid-area: onOff;
+    margin-left: 25%;
+    width: 50px;
+    height: 20px;
+    border-radius: 40%;
+    font-size: x-small;
+}
+
 #uno {
     grid-area: uno;
 }

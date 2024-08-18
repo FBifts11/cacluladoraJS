@@ -1,15 +1,17 @@
 let onOff = false;
 let allowedEntry = true;
+let displayById = document.getElementById('display');
+let onOffById = document.getElementById('onOff');
 
 function encenderApagar() {
     let buttons = document.getElementsByClassName('btn');
 
     if (onOff == false) {
-        document.getElementById('display').style.backgroundColor = "yellowgreen";
-        document.getElementById('onOff').value = 'Off';
-        document.getElementById('onOff').style.backgroundColor = 'orange';
+        displayById.style.backgroundColor = "yellowgreen";
+        onOffById.value = 'Off';
+        onOffById.style.backgroundColor = 'orange';
         setTimeout(() => {
-            document.getElementById('display').value = "0";
+            displayById.value = "0";
 
         }, 500);
         onOff = true;
@@ -24,10 +26,10 @@ function encenderApagar() {
             buttons[i].disabled = true;
         };
 
-        document.getElementById('display').value = ""
-        document.getElementById('display').style.backgroundColor = "gray";
-        document.getElementById('onOff').value = 'On';
-        document.getElementById('onOff').style.backgroundColor = 'green';
+        displayById.value = ""
+        displayById.style.backgroundColor = "gray";
+        onOffById.value = 'On';
+        onOffById.style.backgroundColor = 'green';
         onOff = false;
         allowedEntry = false;
     }
@@ -36,37 +38,37 @@ function encenderApagar() {
 
 function ingresarDato(valor) {
     if (allowedEntry == false) {
-        document.getElementById('display').value = '';
+        displayById.value = '';
     } else {
 
-        if (document.getElementById('display').value == "0") {
-            document.getElementById("display").value = '';
+        if (displayById.value == "0") {
+            displayById.value = '';
         }
-        document.getElementById("display").value += valor;
+        displayById.value += valor;
     }
 }
 
 function borrar() {
     if (allowedEntry == false) {
-        document.getElementById("display").value = "";
+        displayById.value = "";
     } else {
 
-        document.getElementById("display").value = "0";
+        displayById.value = "0";
     }
 }
 
 function calcular() {
     if (allowedEntry == false) {
-        document.getElementById("display").value = "";
+        displayById.value = "";
     } else {
-        const valorDisplay = document.getElementById('display').value;
+        const valorDisplay = displayById.value;
     try {
         const resultado = eval(valorDisplay);
         console.log(resultado);
-        document.getElementById('display').value = resultado;
+        displayById.value = resultado;
     } catch (error) {
         console.log("Error: " + error.message);
-        document.getElementById('display').value = "Error";
+        displayById.value = "Error";
     }
     }
 }

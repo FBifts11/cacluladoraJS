@@ -1,5 +1,5 @@
 let onOff = false;
-allowedEntry = true;
+let allowedEntry = true;
 
 function encenderApagar() {
     let buttons = document.getElementsByClassName('btn');

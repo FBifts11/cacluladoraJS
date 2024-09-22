@@ -10,7 +10,7 @@ h1 {
     text-align: center;
     border: solid 1px;
     border-radius: 2%;
-    padding: 1%;
+    padding: 1% 1% 1% 1.5%;
     background-color: rgb(37, 47, 47);
     display: grid;
     grid-template-columns: repeat(4 25%);

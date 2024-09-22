@@ -1,5 +1,6 @@
 let onOff = false;
-let allowedEntry = true;
+let ingresoPermitido = true;
+let ResultadoMostrado = false;
 let displayById = document.getElementById('display');
 let onOffById = document.getElementById('onOff');
 
@@ -10,18 +11,19 @@ function encenderApagar() {
         displayById.style.backgroundColor = "yellowgreen";
         onOffById.value = 'Off';
         onOffById.style.backgroundColor = 'orange';
+        onOffById.style.cssText = "background-color:orange; font-weight: bold; color: black"
         setTimeout(() => {
             displayById.value = "0";
 
         }, 500);
         onOff = true;
-        allowedEntry = true;
+        ingresoPermitido = true;
         for (var i = 0; i < buttons.length; i++) {
             buttons[i].disabled = false;
         };
 
     } else {
-        
+
         for (var i = 0; i < buttons.length; i++) {
             buttons[i].disabled = true;
         };
@@ -29,27 +31,39 @@ function encenderApagar() {
         displayById.value = ""
         displayById.style.backgroundColor = "gray";
         onOffById.value = 'On';
-        onOffById.style.backgroundColor = 'green';
+        onOffById.style.cssText = "background-color:green; font-weight: bold; color: white"
         onOff = false;
-        allowedEntry = false;
+        ingresoPermitido = false;
     }
 
 }
 
 function ingresarDato(valor) {
-    if (allowedEntry == false) {
+    if (ingresoPermitido == false) {
         displayById.value = '';
     } else {
 
         if (displayById.value == "0") {
             displayById.value = '';
+        } if (!ResultadoMostrado) {
+            displayById.value += valor;
+        } else {
+            displayById.value = valor;
+            ResultadoMostrado = false
         }
+    }
+}
+function ingresarOperador(valor) {
+    if (ingresoPermitido == false) {
+        displayById.value = '';
+    } else {
         displayById.value += valor;
+        ResultadoMostrado = false
     }
 }
 
 function borrar() {
-    if (allowedEntry == false) {
+    if (ingresoPermitido == false) {
         displayById.value = "";
     } else {
 
@@ -58,18 +72,20 @@ function borrar() {
 }
 
 function calcular() {
-    if (allowedEntry == false) {
+    console.log(displayById.value)
+    if (ingresoPermitido == false) {
         displayById.value = "";
     } else {
         const valorDisplay = displayById.value;
-    try {
-        const resultado = eval(valorDisplay);
-        console.log(resultado);
-        displayById.value = resultado;
-    } catch (error) {
-        console.log("Error: " + error.message);
-        displayById.value = "Error";
+        try {
+            const resultado = eval(valorDisplay);
+            console.log(resultado);
+            displayById.value = resultado;
+        } catch (error) {
+            console.log("Error: " + error.message);
+            displayById.value = "Error";
+        }
     }
-    }
+    ResultadoMostrado = true;
 }
 

@@ -78,7 +78,7 @@ function calcular() {
     } else {
         const valorDisplay = displayById.value;
         try {
-            const resultado = eval(valorDisplay);
+            const resultado = math.evaluate(valorDisplay);
             console.log(resultado);
             displayById.value = resultado;
         } catch (error) {
@@ -89,3 +89,15 @@ function calcular() {
     ResultadoMostrado = true;
 }
 
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+    if (!isNaN(key)) {
+        ingresarDato(key);
+    } else if (['+', '-', '*', '/'].includes(key)) {
+        ingresarOperador(key);
+    } else if (key === 'Enter') {
+        calcular();
+    } else if (key === 'Backspace') {
+        borrar();
+    }
+});

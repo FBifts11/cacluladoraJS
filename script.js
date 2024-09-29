@@ -91,6 +91,7 @@ function calcular() {
 
 document.addEventListener('keydown', (event) => {
     const key = event.key;
+    onOffById.blur()
     if (!isNaN(key)) {
         ingresarDato(key);
     } else if (['+', '-', '*', '/'].includes(key)) {
